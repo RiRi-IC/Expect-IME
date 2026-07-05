@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "expect-ime"
+version = "0.1.0"
+description = "Mozc-inspired Japanese IME typo detection core"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "GPL-3.0-only"
+authors = [{ name = "ExpectIME contributors" }]
+keywords = ["ime", "japanese", "mozc", "typo-detection", "nlp"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+  "Natural Language :: Japanese",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Text Processing :: Linguistic",
+]
+
+[project.scripts]
+expect-ime = "expect_ime.__main__:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["expect_ime"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
